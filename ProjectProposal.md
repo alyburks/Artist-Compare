@@ -1,6 +1,6 @@
 #Project Proposal
 
-##Project Description
+###Project Description
 
 **This is a written, non-technical description of your project.  Depending on the specifics of your project, you should outline the answers to these (and perhaps other) questions:**
   
@@ -9,7 +9,7 @@
  3. What does your audience want to learn from your data?  Please list out at least 3 specific questions that your project will answer for your audience.
 
 
-##Technical Description
+###Technical Description
 
 **This section of your proposal is an opportunity to think through the specific analytical steps you'll need to complete throughout the project.**
   
@@ -21,7 +21,7 @@
 6. What major challenges do you anticipate? 
 
 
-##Project Set-up
+###Project Set-up
 
 **In addition to outlining the steps you'll be taking to complete the project, you'll also be setting up your project on GitHub by doing the following:**
   
