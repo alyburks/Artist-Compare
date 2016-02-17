@@ -25,8 +25,8 @@
 
 **In addition to outlining the steps you'll be taking to complete the project, you'll also be setting up your project on GitHub by doing the following:**
   
-~~1. Create a public repository on GitHub in which you'll be completing your final projects.  All group members should be added to the repo so they can push directly to it~~
-~~2. Create at least 5 GitHub Issues as your first set of steps to take in the project.  You should assign these to individual group members to complete ~~
-~~3. Optional: Create a private slack channel(or a new channel) for your group to use for communication.  An awesome part of slack is you can really easily (Links to an external site.) configure it to automatically post to the channel anytime someone pushes to your GitHub repository.  ~~
+~~ 1. Create a public repository on GitHub in which you'll be completing your final projects.  All group members should be added to the repo so they can push directly to it~~
+~~ 2. Create at least 5 GitHub Issues as your first set of steps to take in the project.  You should assign these to individual group members to complete ~~
+~~ 3. Optional: Create a private slack channel(or a new channel) for your group to use for communication.  An awesome part of slack is you can really easily (Links to an external site.) configure it to automatically post to the channel anytime someone pushes to your GitHub repository.  ~~
 
 For your submission, please upload a document (or multiple documents) containing your project and technical descriptions.  Please also submit your website URL of the GitHub repository you'll be using for you final project.
