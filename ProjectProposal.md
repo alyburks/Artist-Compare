@@ -4,11 +4,9 @@
 
 **This is a written, non-technical description of your project.  Depending on the specifics of your project, you should outline the answers to these (and perhaps other) questions:**
   
-1. What is the dataset you'll be working with?  Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be.
-  2. We will be working with the Twitter API. Specfically the Restful public API. Twitter is a major social media site that allows you to "tweet" about a thought or a picture/video. Twitter themselves have collected the data to allow eveyone to use. This specific api allows you not only to read data but to also write "tweets" to Twitter. We accesed it through the Twitter data and web site that gives you documentation about this specific API. One thing to keep in mind is this API only allows 100,000 user tokens.
-2. Who is your target audience?  Depending on the domain of your data, there may be a variety of audiences interested in using the dataset.  You should hone in on one of these audiences.
-3. What does your audience want to learn from your data?  Please list out at least 3 specific questions that your project will answer for your audience.
-
+   We will be working with the Twitter API. Specfically the Restful public API. Twitter is a major social media site that allows you to "tweet" about a thought or a picture/video. Twitter themselves have collected the data to allow eveyone to use. This specific api allows you not only to read data but to also write "tweets" to Twitter. We accesed it through the Twitter data and web site that gives you documentation about this specific API. One thing to keep in mind is this API only allows 100,000 user tokens.
+   Our target audience is marketing teams looking for better ways to reach their aduiences and what they are looking for. This report would be able to alter it's informations as trends change, and as events happen.
+    This report will tell the marketing teams what the most talked about places are so they can better alter their adds to those places. It will also tell them what the most talked about subjects on Twitter are so they can better understand what this age group cares about. It will also include demographic imformation like the different age groups, and gender to be able to alter the makreting techniques per different demographics.
 
 ###Technical Description
 
