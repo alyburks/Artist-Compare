@@ -1,0 +1,41 @@
+---
+title: "Technical Description"
+author: "Jeff Pinkstaff | Evan Taylor"
+date: "February 22, 2016"
+output: html_document
+---
+
+##Technical Description 
+
+####  1. <u>What will be the format of your final product (Shiny app, HTML page or slideshow compiled with KnitR, etc.)? </u>
+  
+  > * Our current plans for the format of our final product are to make it an HTML page (that perhaps links ot other HTML pages). If after wednesday's class we feel like shiny might be a better option then we will create a website with shiny. 
+  
+#### 2. <u>How will you be reading in your data (i.e., are you using an API, or is it a static .csv/.json file)? </u>
+  
+  > * We plan on utilizing the twitter API for most of our data. 
+  
+#### 3. <u>What types of data-wrangling (reshaping, reformatting, etc.) will you need to do to your data?</u>
+  
+  > * We will most definitely be using dplyr in order to select the information we need. 
+  
+#### 4. <u>What (major/new) libraries will be using in this project (no need to list common libraries that are used in many projects such as dplyr)</u>
+  
+  > * Prolllllly just DPLYR BROOOOO
+  
+#### 5. <u>What questions, if any, will you be answering with statistical analysis/machine learning? </u>
+  
+  > * Evan and I aren't quite sure on this yet--we can figure that out tomorrow when we meet up though! 
+  
+#### 6. <u>What major challenges do you anticipate? </u>
+  
+  > * The hardest part for us will probably  be the hardest part for any group--finding times that we can all be working on the project *at the same time*. Even though we can all push and pull the current editions it will still be hard if someone's issue isn't working and another person's relies on the not working one. Working together in person still beats complete computer interaction. Another major issue could be the time it takes us to figure out how to succesfully *do* what it is we are *actually wanting to do*. Sometimes you have to settle. Hopefully not. 
+  
+    
+    
+      
+        
+
+
+
+
