@@ -2,6 +2,10 @@
 
 ###Project Description
 
+#Project Proposal
+
+###Project Description
+
 **This is a written, non-technical description of your project.  Depending on the specifics of your project, you should outline the answers to these (and perhaps other) questions:**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We will be working with the Twitter API. Specfically the Restful public API. Twitter is a major social media site that allows you to "tweet" about a thought or a picture/video. Twitter themselves have collected the data to allow eveyone to use. This specific api allows you not only to read data but to also write "tweets" to Twitter. We accesed it through the Twitter data and web site that gives you documentation about this specific API. One thing to keep in mind is this API only allows 100,000 user tokens.
@@ -12,22 +16,8 @@
 
 ###Technical Description
 
-**This section of your proposal is an opportunity to think through the specific analytical steps you'll need to complete throughout the project.**
-  
-1. What will be the format of your final product (Shiny app, HTML page or slideshow compiled with KnitR, etc.)?
-2. How will you be reading in your data (i.e., are you using an API, or is it a static .csv/.json file)?
-3. What types of data-wrangling (reshaping, reformatting, etc.) will you need to do to your data?
-4. What (major/new) libraries will be using in this project (no need to list common libraries that are used in many projects such as dplyr)
-5. What questions, if any, will you be answering with statistical analysis/machine learning?
-6. What major challenges do you anticipate? 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our current plans for the format of our final product are to make it an HTML page (that perhaps links ot other HTML pages). If after wednesday's class we feel like shiny might be a better option then we will create a website with shiny. We plan on utilizing the twitter API for most of our data. 
+We will most definitely be using dplyr, and json in order to select the information we need. We might also use curl to curl our urls, we might use knitr to make different tables.
 
-###Project Set-up
-
-**In addition to outlining the steps you'll be taking to complete the project, you'll also be setting up your project on GitHub by doing the following:**
-  
-1. ~~Create a public repository on GitHub in which you'll be completing your final projects.  All group members should be added to the repo so they can push directly to it~~
-2. ~~Create at least 5 GitHub Issues as your first set of steps to take in the project.  You should assign these to individual group members to complete~~
-3. ~~Optional: Create a private slack channel(or a new channel) for your group to use for communication.  An awesome part of slack is you can really easily (Links to an external site.) configure it to automatically post to the channel anytime someone pushes to your GitHub repository.~~
-
-For your submission, please upload a document (or multiple documents) containing your project and technical descriptions.  Please also submit your website URL of the GitHub repository you'll be using for you final project.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The questions we will be answering range from what locations are most tweeted about to what the majority of demographics that are present on twitter. We will be awnsering the questions to help marketing teams figure out how to target their advertisements to their target demographics. The major problem we might run into is how big the Twitter api is.
