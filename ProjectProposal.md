@@ -2,7 +2,6 @@
 
 ###Project Description
 
-**This is a written, non-technical description of your project.  Depending on the specifics of your project, you should outline the answers to these (and perhaps other) questions:**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We will be working with the Twitter API. Specfically the Restful public API. Twitter is a major social media site that allows you to "tweet" about a thought or a picture/video. Twitter themselves have collected the data to allow eveyone to use. This specific api allows you not only to read data but to also write "tweets" to Twitter. We accesed it through the Twitter data and web site that gives you documentation about this specific API. One thing to keep in mind is this API only allows 100,000 user tokens.
 
