@@ -1,21 +1,13 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
+
+##This and the ui will be where we combine the data and run the equation and then print out a picture
+##We should present the data we recieve and internally also run it through the equation in the back ground
+##Evan this is what you will do since you are familiar with sourcing and everything like you did in assignment 7
 
 library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-  
-    
-    # generate bins based on input$bins from ui.R
-    #artist1 <- paste0('https://api.spotify.com/v1/search?q=',input$first_artist, '&type=artist')
-    #artist2 <- paste0('https://api.spotify.com/v1/search?q=',input$second_artist, '&type=artist')
+
     
     output$userText <- renderText({ 
        return(paste0('The user typed: ', input$first_artist)) 
