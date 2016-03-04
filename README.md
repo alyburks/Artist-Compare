@@ -1,6 +1,6 @@
 #Artist Compare
 
-## INFO 498 FD
+##INFO 498 FD
 
 ###Created by Alyxis Burks, Samuel Tompkins, Evan Taylor, and Jeffrey Pinkstaff
 
