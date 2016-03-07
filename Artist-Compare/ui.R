@@ -1,12 +1,11 @@
 
-
 library(shiny)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title 
-    titlePanel("Compare Artist"), 
+    titlePanel("Compare Artists"), 
 
       sidebarLayout( 
         sidebarPanel( 
@@ -14,19 +13,23 @@ shinyUI(fluidPage(
   
        textInput("first_artist",
                  label = h3("First Artist:"),
-                 value = "Enter artist first name..."),
+                 value = "Enter artist..."),
        textInput("second_artist",
                  label = h3("Second Artist:"),
-                 value = "Enter artist first name...")
-
+                 value = "Enter artist..."),
+       actionButton("action", label = "Go!")
     
 
         ),
-    mainPanel( 
-      textOutput('userText'),
-      textOutput('userText2')
+    mainPanel(
+        h3(textOutput('userText')),
+        h3(textOutput("Vs.")),
+        h3(textOutput('userText2')),
+        textOutput('value')
+#      plotlyOutput(visualization1)
     ) 
     
 )
 
 ))
+
