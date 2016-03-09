@@ -61,11 +61,13 @@ each_artist <- function(artist){
    top_track_data <- fromJSON(top_tracks)
    
    ret$top_ten_tracks_names <- top_track_data$tracks$name
-   ret$top_ten_tracks_pop <- top_track_data$tracks$popularity
+   #ret$top_ten_tracks_pop <- top_track_data$tracks$popularity
    
    #For Sam to compare values for Artists. 
-   ret$sum_top_tracks <- sum(top_ten_tracks_pop)
+   #ret$sum_top_tracks <- sum(top_ten_tracks_pop)
   
    return(ret) 
 }
+
+Data <- each_artist("Adele")
 

@@ -1,4 +1,6 @@
 
+source("data_from_artist.R")
+source("visualization.R")
 library(shiny)
 
 # Define UI for application that draws a histogram
@@ -25,11 +27,11 @@ shinyUI(fluidPage(
         h3(textOutput('userText')),
         h3(textOutput("Vs.")),
         h3(textOutput('userText2')),
-        textOutput('value')
+        textOutput('value'),
+        textOutput("Data")
 #      plotlyOutput(visualization1)
     ) 
     
 )
 
 ))
-
