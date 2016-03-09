@@ -20,7 +20,6 @@ shinyServer(function(input, output) {
     output$userText2 <- renderText({ 
       return(paste0(input$second_artist)) 
     }) 
-    output$value <- renderPrint({ input$action })
    
     output$Vs. <- renderText({ 
       return(paste0('Vs.'))})
@@ -28,9 +27,14 @@ shinyServer(function(input, output) {
     output$Data <- reactive({
       artist1 <- each_artist(input$first_artist)
       artist2 <- each_artist(input$second_artist)
-      a <-  better_artist_algorithm(artist1, artist2)
-      print(artist1$num_albums, artist2$num_albums)
-    
+      #better_artist_algorithm(artist1, artist2)
+      
+      shit <- list()
+      
+      shit$numAlbs <- print(artist1$num_albums)
+      shit$popArtist <- print(artist2$pop_artist)
+      
+      print(paste0("The best artist is ", artist2$pop_artist))
     })
   
 })

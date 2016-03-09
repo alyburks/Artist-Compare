@@ -3,8 +3,12 @@ source("data_from_artist.R")
 source("visualization.R")
 library(shiny)
 
+#install.packages('shinythemes')
+#require(shinythemes)
+
+
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme('Cerulean'),
   
   # Application title 
     titlePanel("Compare Artists"), 
@@ -18,8 +22,7 @@ shinyUI(fluidPage(
                  value = "Enter artist..."),
        textInput("second_artist",
                  label = h3("Second Artist:"),
-                 value = "Enter artist..."),
-       actionButton("action", label = "Go!")
+                 value = "Enter artist...")
     
 
         ),
@@ -27,9 +30,8 @@ shinyUI(fluidPage(
         h3(textOutput('userText')),
         h3(textOutput("Vs.")),
         h3(textOutput('userText2')),
-        textOutput('value'),
-        textOutput('Data'),
         textOutput('Data')
+        #textOutput('Data')
 #      plotlyOutput(visualization1)
     ) 
     
