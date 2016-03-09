@@ -13,10 +13,9 @@
 
 better_artist_algorithm <- function(art_one, art_two){
   
-  #Set maximums used to divide single artist's data from
+  #Set maximum number of followers used to divide single artist's followers from
   max_foll <- art_one$followers_artist + art_two$followers_artist
-  max_pop_trax <- art_one$sum_top_tracks + art_two$sum_top_tracks
-  
+
   #Logic for best artist
   #---------------------
   #Calculate number between 0 and 1 based on:
@@ -26,12 +25,12 @@ better_artist_algorithm <- function(art_one, art_two){
   
   index_one <- ( (art_one$pop_artist / 100) *
                  (art_one$followers_artist / max_foll) *
-                 (art_one$sum_top_tracks / max_pop_trax)
+                 (art_one$sum_top_tracks / 1000)
                )
   
   index_two <- ( (art_two$pop_artist / 100) *
                    (art_two$followers_artist / max_foll) *
-                   (art_two$sum_top_tracks / max_pop_trax)
+                   (art_two$sum_top_tracks / 1000)
   )
   
   # Return the list associated with the maximum of the two values
