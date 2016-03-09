@@ -28,7 +28,7 @@ shinyUI(fluidPage(
         h3(textOutput("Vs.")),
         h3(textOutput('userText2')),
         textOutput('value'),
-        textOutput("Data")
+        textOutput('Data')
 #      plotlyOutput(visualization1)
     ) 
     

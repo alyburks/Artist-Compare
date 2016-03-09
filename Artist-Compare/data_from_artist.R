@@ -71,5 +71,5 @@ each_artist <- function(artist){
    return(ret) 
 }
 
-Data <- each_artist("Adele")
+
 

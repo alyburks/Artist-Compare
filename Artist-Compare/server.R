@@ -25,9 +25,9 @@ shinyServer(function(input, output) {
     output$Vs. <- renderText({ 
       return(paste0('Vs.'))})
     
-    output$Data <- renderText({
-      Data <- each_artist("Adele")
-      return(Data)
+    output$Data <- reactive({
+      df <- each_artist("adele")
+      print(df$num_albums)
     })
   
 })
