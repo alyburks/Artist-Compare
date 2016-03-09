@@ -9,7 +9,7 @@ library(dplyr)
 
 source("data_from_artist.R")
 source("visualization.R")
-
+source("equation.R")
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 
@@ -26,8 +26,11 @@ shinyServer(function(input, output) {
       return(paste0('Vs.'))})
     
     output$Data <- reactive({
-      df <- each_artist("adele")
-      print(df$num_albums)
+      artist1 <- each_artist(input$first_artist)
+      artist2 <- each_artist(input$second_artist)
+      a <-  better_artist_algorithm(artist1, artist2)
+      print(artist1$num_albums, artist2$num_albums)
+    
     })
   
 })
