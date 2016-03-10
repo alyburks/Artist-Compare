@@ -1,3 +1,14 @@
+---
+title: "Test"
+author: "Jeff Pinkstaff"
+date: "March 8, 2016"
+output: html_document
+runtime: shiny
+---
+
+```{r, include=FALSE, echo =FALSE}
+
+
 ##File for data
 ##This is going to be the file where we collect the data we feel is necessary for use to determine who the better
 ##Artist is. Kind of like the super function from assignment 7. So since Jeff you did this orginally you can do this part
@@ -9,14 +20,38 @@ require(curl)
 require(knitr)
 require(dplyr)
 
+
+
+
+
+
+
+
+
+
+```
+
+
+
+PAGE BREAK
+
+
+```{r, echo = FALSE}
+
+textInput("first_artist",
+                 label = h3("First Artist:"),
+                 value = "Enter artist...")
+       textInput("second_artist",
+                 label = h3("Second Artist:"),
+                 value = "Enter artist...")
+       
 each_artist <- function(artist){
   
   
   #Initialize an empty list for all the variables I find later. 
   ret <- list()
-  gsub(" ", "+", artist)
+
   
-  artist <- gsub(" ", "+", artist)
   
   #Gives artist searched
   artist_url <- paste0('https://api.spotify.com/v1/search?q=', artist , '&type=artist')
@@ -68,12 +103,34 @@ each_artist <- function(artist){
    
    #For Sam to compare values for Artists. 
    ret$sum_top_tracks <- sum(ret$top_ten_tracks_pop)
-   
-   #Added by Sam: 
-   #Number of songs (from top 10) that have a popularity value above 80
-   ret$num_hit_trax <- sum(ret$top_ten_tracks_pop > 80)
 
   
    return(ret) 
 }
+
+reactive({
+  
+     
+
+      Data <- each_artist(input$first_artist)
+      Data1 <- each_artist(input$second_artist)
+      print(Data$artist_name)
+      
+      #table <- as.data.frame(Data)
+      #table <- kable(Data, format = "markdown", padding = 1, align = 'c', caption = "Artist Data")
+      
+      kable(head(Data, format = "markdown", padding = 2))
+      
+      return(table)
+    })
+
+
+
+```
+
+
+
+
+
+
 

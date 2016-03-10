@@ -14,6 +14,18 @@ shinyUI(fluidPage(
       #
       sidebarPanel( 
         textInput("first_artist",
+
+# Define UI for application that draws a histogram
+shinyUI(fluidPage(theme = "bootstrap.css",
+  
+  # Application title 
+    titlePanel("Compare Artists"), 
+
+      sidebarLayout( 
+        sidebarPanel( 
+      
+  
+       textInput("first_artist",
                  label = h3("First Artist:"),
                  placeholder = "Enter Artist..."),
         textInput("second_artist",
