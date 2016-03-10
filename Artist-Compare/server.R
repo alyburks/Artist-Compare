@@ -1,8 +1,3 @@
-
-##This and the ui will be where we combine the data and run the equation and then print out a picture
-##We should present the data we recieve and internally also run it through the equation in the back ground
-##Evan this is what you will do since you are familiar with sourcing and everything like you did in assignment 7
-
 library(shiny)
 library(plotly)
 library(dplyr)
@@ -10,31 +5,29 @@ library(dplyr)
 source("data_from_artist.R")
 source("visualization.R")
 source("equation.R")
-# Define server logic required to draw a histogram
-shinyServer(function(input, output) {
 
-    
-    output$userText <- renderText({ 
-       return(paste0(input$first_artist)) 
-     }) 
-    output$userText2 <- renderText({ 
-      return(paste0(input$second_artist)) 
-    }) 
-   
-    output$Vs. <- renderText({ 
-      return(paste0('Vs.'))})
-    
-    output$Data <- reactive({
-      artist1 <- each_artist(input$first_artist)
-      artist2 <- each_artist(input$second_artist)
-      #better_artist_algorithm(artist1, artist2)
-      
-      shit <- list()
-      
-      shit$numAlbs <- print(artist1$num_albums)
-      shit$popArtist <- print(artist2$pop_artist)
-      
-      print(paste0("The best artist is ", artist2$pop_artist))
-    })
+shinyServer(function(input, output) {
   
+  lists <- eventReactive(input$goButton ,{
+    ret <- list()
+    ret$artist1 <- each_artist(input$first_artist)
+    ret$artist2 <- each_artist(input$second_artist)
+    ret$best <- better_artist_algorithm(ret$artist1, ret$artist2)
+    return(ret)
+  })
+    
+  output$sentence <- renderText({
+    temp <- lists()
+    print(temp)
+    print(paste0("The better artist is ", temp$best$name_artist, "!"))
+  })
+  
+  output$table <- renderTable({
+    temp <- lists()
+    table <- data.frame(row.names = c("Popularity", "Followers", "Total Albums"))
+    table$artist1 <- c(temp$artist1$pop_artist, temp$artist1$followers_artist, temp$artist1$num_albums)
+    table$artist2 <- c(temp$artist2$pop_artist, temp$artist2$followers_artist, temp$artist2$num_albums)
+    colnames(table) <- c(temp$artist1$name_artist, temp$artist2$name_artist)
+    return(table)
+  })
 })
