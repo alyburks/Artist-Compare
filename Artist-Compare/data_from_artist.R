@@ -14,8 +14,7 @@ each_artist <- function(artist){
   
   #Initialize an empty list for all the variables I find later. 
   ret <- list()
-  gsub(" ", "+", artist)
-  
+
   artist <- gsub(" ", "+", artist)
   
   #Gives artist searched
