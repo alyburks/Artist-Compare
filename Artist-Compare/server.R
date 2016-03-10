@@ -56,7 +56,7 @@ shinyServer(function(input, output) {
     ) %>% 
       layout(xaxis = list(title = ""),
              yaxis = list(title = ""),
-             paper_bgcolor = toRGB("gray70"),
-             plot_bgcolor = toRGB("gray70"))
+             paper_bgcolor = toRGB("gray50"),
+             plot_bgcolor = toRGB("gray50"))
   })
 })
