@@ -1,9 +1,7 @@
 library(shiny)
 library(plotly)
-library(dplyr)
 
 source("data_from_artist.R")
-source("visualization.R")
 source("equation.R")
 
 shinyServer(function(input, output) {
@@ -26,8 +24,6 @@ shinyServer(function(input, output) {
     z = tempfile()
     download.file(temp$best$img_artist, z, mode = "wb")
     list(src = z,
-         width = 200,
-         height = 200,
          alt = "Artist Image")
   })
   
@@ -40,5 +36,22 @@ shinyServer(function(input, output) {
                        temp$artist2$num_albums, temp$artist2$num_hit_trax)
     colnames(table) <- c(temp$artist1$name_artist, temp$artist2$name_artist)
     return(table)
+  })
+  
+  output$visualization <- renderPlotly({
+    temp <- lists()
+    loc_one <- paste0("temp$artist1$", input$radioButtons)
+    loc_two <- paste0("temp$artist2$", input$radioButtons)
+    plot_ly(
+      x = c(temp$artist1$name_artist, temp$artist2$name_artist),
+      y = c(eval(parse(text=loc_one)), eval(parse(text=loc_two))),
+      type = "bar",
+      marker = list(color = toRGB("forestgreen")),
+      opacity = 0.75
+    ) %>% 
+      layout(xaxis = list(title = ""),
+             yaxis = list(title = ""),
+             paper_bgcolor = toRGB("gray70"),
+             plot_bgcolor = toRGB("gray70"))
   })
 })

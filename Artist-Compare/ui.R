@@ -1,9 +1,7 @@
 library(shiny)
 library(plotly)
-library(dplyr)
 
 source("data_from_artist.R")
-source("visualization.R")
 source("equation.R")
 
 # Define UI for application that draws a histogram
@@ -24,16 +22,23 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       textInput("second_artist",
                  label = h3("Second Artist:"),
                  placeholder =  "Enter Artist..."),
-        actionButton("goButton", "FIGHT!")
-      
+        actionButton("goButton", "FIGHT!"),
+        radioButtons("radioButtons", 
+                     label = h3("Select One"), 
+                     choices = list("Pop" = "pop_artist",
+                                    "Followers" = "followers_artist",
+                                    "Albums" = "num_albums",
+                                    "Current Hit Songs" = "num_hit_trax",
+                                    "Total Popularity of Top 10 Songs" = "sum_top_tracks"),
+                     selected = "pop_artist")
       ),
       #
 #, downloadLink('audio')
       mainPanel(
            tabsetPanel(
            tabPanel("Champion", textOutput('sentence'),imageOutput('image'), textOutput('previewSentence')), 
-           tabPanel("Data", tableOutput('table')) 
-           #tabPanel("Followers", plotlyOutput(visualization1))
+           tabPanel("Data", tableOutput('table')), 
+           tabPanel("Followers", plotlyOutput('visualization'))
       )
     )
   )
