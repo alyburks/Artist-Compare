@@ -28,14 +28,15 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       
       ),
       #
+#, downloadLink('audio')
       mainPanel(
-        h3(textOutput ('sentence')),
-        imageOutput('image'),
-        tableOutput('table')
-        #plotlyOutput(visualization1)
-      ) 
+           tabsetPanel(
+           tabPanel("Champion", textOutput('sentence'),imageOutput('image'), textOutput('previewSentence')), 
+           tabPanel("Data", tableOutput('table')) 
+           #tabPanel("Followers", plotlyOutput(visualization1))
+      )
     )
   )
-)
+))
 
   
