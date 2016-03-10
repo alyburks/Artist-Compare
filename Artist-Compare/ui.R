@@ -15,15 +15,15 @@ shinyUI(fluidPage(
       sidebarPanel( 
         textInput("first_artist",
                  label = h3("First Artist:"),
-                 value = "Adele"),
+                 placeholder = "Enter Artist..."),
         textInput("second_artist",
                  label = h3("Second Artist:"),
-                 value = "Drake"),
+                 placeholder =  "Enter Artist..."),
         actionButton("goButton", "FIGHT!")
       ),
       #
       mainPanel(
-        textOutput('sentence'),
+        h3(textOutput('sentence')),
         imageOutput('image'),
         tableOutput('table')
         #plotlyOutput(visualization1)
