@@ -28,7 +28,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
 #, downloadLink('audio')
       mainPanel(
            tabsetPanel(
-           tabPanel("Champion", textOutput('sentence'),imageOutput('image'), textOutput('previewSentence')), 
+           tabPanel("Champion", h1(textOutput('sentence')),imageOutput('image'), textOutput('previewSentence')), 
            tabPanel("Data", tableOutput('table')), 
            tabPanel("Followers", 
                     radioButtons("radioButtons", 

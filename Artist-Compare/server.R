@@ -19,6 +19,11 @@ shinyServer(function(input, output) {
       paste0("The better artist is ", temp$best$name_artist, "!")
   })
   
+  output$previewSentence <- renderText({
+    temp <- lists()
+    paste0("Preview of the artist top track can be found at ", href = temp$best$track_id)
+  })
+  
   output$image <- renderImage({
     temp <- lists()
     z = tempfile()
