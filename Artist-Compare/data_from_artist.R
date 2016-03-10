@@ -4,6 +4,7 @@
 ## Followers, Popularity, how many albums, top tracks
 ##alyxis needs a data table that has the followers
 
+
 require(jsonlite)
 require(curl)
 require(knitr)
@@ -14,8 +15,7 @@ each_artist <- function(artist){
   
   #Initialize an empty list for all the variables I find later. 
   ret <- list()
-
-  artist <- gsub(" ", "+", artist)
+  
   
   #Gives artist searched
   artist_url <- paste0('https://api.spotify.com/v1/search?q=', artist , '&type=artist')
@@ -28,6 +28,7 @@ each_artist <- function(artist){
   id <- artist_data$artists$items$id[1]
   
   #This is the url wanted for each specific artist (the top one on Spotify)
+  
   artist_info <- paste0('https://api.spotify.com/v1/artists/', 
                          id)
   
@@ -61,6 +62,8 @@ each_artist <- function(artist){
    
    top_track_data <- fromJSON(top_tracks)
    
+   ret$track_id <- top_track_data$tracks$preview_url[1]
+   
    ret$top_ten_tracks_names <- top_track_data$tracks$name
 
    ret$top_ten_tracks_pop <- top_track_data$tracks$popularity
@@ -75,4 +78,6 @@ each_artist <- function(artist){
   
    return(ret) 
 }
+
+
 
