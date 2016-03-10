@@ -6,29 +6,28 @@ source("data_from_artist.R")
 source("visualization.R")
 source("equation.R")
 
-shinyUI(fluidPage(
-  #
-  titlePanel("Spartify"), 
-    #
-    sidebarLayout(
-      #
-      sidebarPanel( 
-        textInput("first_artist",
-
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(theme = "bootstrap.css",
   
   # Application title 
-    titlePanel("Compare Artists"), 
-
+  
+  tags$head(
+    tags$style(type='text/css', 
+               "{font-size: 69px} ")),    
+  
+  titlePanel(h1(p("Spartify", style = "color:lightgreen"))), 
+  
       sidebarLayout( 
         sidebarPanel( 
-      
+          
   
        textInput("first_artist",
                  label = h3("First Artist:"),
                  placeholder = "Enter Artist..."),
         textInput("second_artist",
+
+                 value = "Adele"),
+      textInput("second_artist",
                  label = h3("Second Artist:"),
                  placeholder =  "Enter Artist..."),
         actionButton("goButton", "FIGHT!")
@@ -36,6 +35,9 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       #
       mainPanel(
         h3(textOutput('sentence')),
+
+        
+        h3(textOutput ('sentence')),
         imageOutput('image'),
         tableOutput('table')
         #plotlyOutput(visualization1)
@@ -43,3 +45,5 @@ shinyUI(fluidPage(theme = "bootstrap.css",
     )
   )
 )
+
+  

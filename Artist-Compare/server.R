@@ -16,9 +16,9 @@ shinyServer(function(input, output) {
     return(ret)
   })
     
-  output$sentence <- renderText({
+  output$sentence <- renderText({ 
     temp <- lists()
-    paste0("The better artist is ", temp$best$name_artist, "!")
+      paste0("The better artist is ", temp$best$name_artist, "!")
   })
   
   output$image <- renderImage({
