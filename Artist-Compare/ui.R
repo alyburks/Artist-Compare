@@ -24,6 +24,7 @@ shinyUI(fluidPage(
       #
       mainPanel(
         textOutput('sentence'),
+        imageOutput('image'),
         tableOutput('table')
         #plotlyOutput(visualization1)
       ) 

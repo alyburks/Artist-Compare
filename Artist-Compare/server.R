@@ -18,8 +18,17 @@ shinyServer(function(input, output) {
     
   output$sentence <- renderText({
     temp <- lists()
-    print(temp)
-    print(paste0("The better artist is ", temp$best$name_artist, "!"))
+    paste0("The better artist is ", temp$best$name_artist, "!")
+  })
+  
+  output$image <- renderImage({
+    temp <- lists()
+    z = tempfile()
+    download.file(temp$best$img_artist, z, mode = "wb")
+    list(src = z,
+         width = 200,
+         height = 200,
+         alt = "Artist Image")
   })
   
   output$table <- renderTable({
