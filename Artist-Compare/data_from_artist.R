@@ -63,7 +63,7 @@ each_artist <- function(artist){
    
    top_track_data <- fromJSON(top_tracks)
    
-   ret$track_id <- top_track_data$tracks$preview_url[1]
+   ret$track_id <- top_track_data$tracks$preview_url[5]
    
    ret$top_ten_tracks_names <- top_track_data$tracks$name
 
