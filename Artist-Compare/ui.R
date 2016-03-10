@@ -22,15 +22,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       textInput("second_artist",
                  label = h3("Second Artist:"),
                  placeholder =  "Enter Artist..."),
-        actionButton("goButton", "FIGHT!"),
-        radioButtons("radioButtons", 
-                     label = h3("Select One"), 
-                     choices = list("Pop" = "pop_artist",
-                                    "Followers" = "followers_artist",
-                                    "Albums" = "num_albums",
-                                    "Current Hit Songs" = "num_hit_trax",
-                                    "Total Popularity of Top 10 Songs" = "sum_top_tracks"),
-                     selected = "pop_artist")
+        actionButton("goButton", "FIGHT!")
       ),
       #
 #, downloadLink('audio')
@@ -38,7 +30,16 @@ shinyUI(fluidPage(theme = "bootstrap.css",
            tabsetPanel(
            tabPanel("Champion", textOutput('sentence'),imageOutput('image'), textOutput('previewSentence')), 
            tabPanel("Data", tableOutput('table')), 
-           tabPanel("Followers", plotlyOutput('visualization'))
+           tabPanel("Followers", 
+                    radioButtons("radioButtons", 
+                                 label = h3("Select One"), 
+                                 choices = list("Pop" = "pop_artist",
+                                                "Followers" = "followers_artist",
+                                                "Albums" = "num_albums",
+                                                "Current Hit Songs" = "num_hit_trax",
+                                                "Total Popularity of Top 10 Songs" = "sum_top_tracks"),
+                                 selected = "pop_artist"),
+                    plotlyOutput('visualization'))
       )
     )
   )
