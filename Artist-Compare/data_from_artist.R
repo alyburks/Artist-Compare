@@ -66,6 +66,10 @@ each_artist <- function(artist){
    
    #For Sam to compare values for Artists. 
    ret$sum_top_tracks <- sum(ret$top_ten_tracks_pop)
+   
+   #Added by Sam: 
+   #Number of songs (from top 10) that have a popularity value above 80
+   ret$num_hit_trax <- sum(ret$top_ten_tracks_pop > 80)
 
   
    return(ret) 

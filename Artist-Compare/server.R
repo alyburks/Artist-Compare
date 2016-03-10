@@ -33,9 +33,11 @@ shinyServer(function(input, output) {
   
   output$table <- renderTable({
     temp <- lists()
-    table <- data.frame(row.names = c("Popularity", "Followers", "Total Albums"))
-    table$artist1 <- c(temp$artist1$pop_artist, temp$artist1$followers_artist, temp$artist1$num_albums)
-    table$artist2 <- c(temp$artist2$pop_artist, temp$artist2$followers_artist, temp$artist2$num_albums)
+    table <- data.frame(row.names = c("Popularity", "Followers", "Total Albums", "Total Hit Songs"))
+    table$artist1 <- c(temp$artist1$pop_artist, temp$artist1$followers_artist, 
+                       temp$artist1$num_albums, temp$artist1$num_hit_trax)
+    table$artist2 <- c(temp$artist2$pop_artist, temp$artist2$followers_artist, 
+                       temp$artist2$num_albums, temp$artist2$num_hit_trax)
     colnames(table) <- c(temp$artist1$name_artist, temp$artist2$name_artist)
     return(table)
   })
