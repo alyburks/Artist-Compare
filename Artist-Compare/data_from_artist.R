@@ -15,6 +15,7 @@ each_artist <- function(artist){
   #Initialize an empty list for all the variables I find later. 
   ret <- list()
   
+  artist <- gsub(" ", "+", artist)
   
   #Gives artist searched
   artist_url <- paste0('https://api.spotify.com/v1/search?q=', artist , '&type=artist')
