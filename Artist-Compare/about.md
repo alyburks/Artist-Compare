@@ -7,4 +7,6 @@ This application utilizes the *Spotify* API to retrieve data about two user-chos
 
 The application was written using a combination of R, Shiny, Plotly, and CSS, while collaboration was managed by Git and GitHub.
 
+You can view the repository on GitHub [here](https://github.com/alyburks/Artist-Compare).
+
 Thank you. 

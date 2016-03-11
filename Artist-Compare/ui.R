@@ -49,8 +49,8 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                                    selected = "pop_artist"),
                       plotlyOutput('visualization')),
              #Tab about the application
-             tabPanel("About", includeMarkdown("about.md"))
-        )
+             tabPanel("About", includeMarkdown("about.md")),
+        selected = "About")
       )
    )
 ))
