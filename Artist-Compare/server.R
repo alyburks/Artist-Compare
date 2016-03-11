@@ -34,11 +34,6 @@ shinyServer(function(input, output) {
         HTML(url)
       })
       
-      output$previewSentence <- renderText({
-        temp <- lists()
-       paste0("Preview of the artist top track can be found at ", href = temp$best$track_id)
-      })
-      
       #Gives image of the artist
       output$image <- renderImage({
         temp <- lists()
