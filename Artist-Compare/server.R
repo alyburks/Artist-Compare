@@ -24,7 +24,7 @@ shinyServer(function(input, output) {
       #Text for who is the better artist  
       output$sentence <- renderText({ 
         temp <- lists()
-        paste0("The better artist is ", temp$best$name_artist, "!")
+        paste0(temp$best$name_artist, " Wins!")
       })
       
       #Plays music
@@ -34,11 +34,11 @@ shinyServer(function(input, output) {
         HTML(url)
       })
       
-      #Text for about
-      output$about <- renderText({
-        paste0("This application leverages the Spotify API to compare two artists. The winner is determined by an equation")
+      output$previewSentence <- renderText({
+        temp <- lists()
+       paste0("Preview of the artist top track can be found at ", href = temp$best$track_id)
       })
-
+      
       #Gives image of the artist
       output$image <- renderImage({
         temp <- lists()

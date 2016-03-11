@@ -7,6 +7,7 @@ source("equation.R")
 shinyUI(fluidPage(theme = "bootstrap.css",
   
   titlePanel(imageOutput('logo', height = "auto")), 
+  hr(),
   
   sidebarLayout( 
       sidebarPanel( 
@@ -18,6 +19,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
             textInput("second_artist",
                        label = h3("Second Artist:"),
                        placeholder =  "Enter Artist..."),
+            hr(),
             #Does not run two artist until pressed
             actionButton("goButton", "Fight!")
       ),
@@ -28,6 +30,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
              tabPanel("Champion", 
                       h1(textOutput('sentence')),
                       imageOutput('image', height = "auto"), 
+                      hr(),
                       textOutput('previewSentence'), 
                       uiOutput('url')), 
              #Table of data tab
@@ -44,7 +47,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                                    selected = "pop_artist"),
                       plotlyOutput('visualization')),
              #Tab about the application
-             tabPanel("About", h3(textOutput('about')))
+             tabPanel("About", includeMarkdown("about.md"))
         )
       )
    )
