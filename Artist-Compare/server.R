@@ -21,21 +21,18 @@ shinyServer(function(input, output) {
         paste0("The better artist is ", temp$best$name_artist, "!")
       })
       
-      output$url <- renderText({
+      #Plays music
+      output$url <- renderUI({
         temp <- lists()
-        paste0(temp$best$track_id)
+        url <- paste0("<audio src='",temp$best$track_id ,"' type='audio/mp3' autoplay controls></audio>")
+        HTML(url)
       })
       
       #Text for about
       output$about <- renderText({
         paste0("This application leverages the Spotify API to compare two artists. The winner is determined by an equation")
       })
-      
-      output$previewSentence <- renderText({
-        temp <- lists()
-       paste0("Preview of the artist top track can be found at ", href = temp$best$track_id)
-      })
-      
+
       #Gives image of the artist
       output$image <- renderImage({
         temp <- lists()
