@@ -15,6 +15,12 @@ shinyServer(function(input, output) {
         return(ret)
       })
       
+      output$logo <- renderImage({
+        list(src = 'imgs/spartify-logo2.png', 
+             alt = "Spartify Logo",
+             width = "50%")
+      }, deleteFile = FALSE)
+      
       #Text for who is the better artist  
       output$sentence <- renderText({ 
         temp <- lists()
@@ -67,11 +73,10 @@ shinyServer(function(input, output) {
           y = c(eval(parse(text=loc_one)), eval(parse(text=loc_two))),
           type = "bar",
           marker = list(color = toRGB("forestgreen")),
-          opacity = 0.75
-        ) %>% 
-          layout(xaxis = list(title = ""),
-                 yaxis = list(title = ""),
-                 paper_bgcolor = toRGB("gray50"),
-                 plot_bgcolor = toRGB("gray50"))
+          opacity = 0.75) %>% 
+        layout(xaxis = list(title = ""),
+               yaxis = list(title = ""),
+               paper_bgcolor = toRGB("gray50"),
+               plot_bgcolor = toRGB("gray50"))
       })
 })
