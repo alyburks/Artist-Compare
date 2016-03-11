@@ -21,6 +21,11 @@ shinyServer(function(input, output) {
              width = "30%")
       }, deleteFile = FALSE)
       
+      output$both_names <- renderText({
+        temp <- lists()
+        paste0(temp$artist1$name_artist, " Vs. ", temp$artist2$name_artist)
+      })
+      
       #Text for who is the better artist  
       output$sentence <- renderText({ 
         temp <- lists()
@@ -32,6 +37,11 @@ shinyServer(function(input, output) {
         temp <- lists()
         url <- paste0("<audio src='",temp$best$track_id ,"' type='audio/mp3' autoplay controls></audio>")
         HTML(url)
+      })
+      
+      output$previewSentence <- renderText({
+        temp <- lists()
+        paste0("Listen to a sample here...")
       })
       
       #Gives image of the artist

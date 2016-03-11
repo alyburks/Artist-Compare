@@ -21,22 +21,24 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                        placeholder =  "Enter Artist..."),
             hr(),
             #Does not run two artist until pressed
-            actionButton("goButton", "Fight!")
+            actionButton("goButton", "Fight")
       ),
       mainPanel(
         #Creates tabs
         tabsetPanel(
             #Winner tab
-             tabPanel("Champion", 
+             tabPanel("Winner", 
+                      h4(textOutput('both_names')),
+                      hr(),
                       h1(textOutput('sentence')),
                       imageOutput('image', height = "auto"), 
                       hr(),
-                      textOutput('previewSentence'), 
+                      h4(textOutput('previewSentence')), 
                       uiOutput('url')), 
              #Table of data tab
-             tabPanel("Data", tableOutput('table')), 
+             tabPanel("Data Table", tableOutput('table')), 
              #Tab of interactive display
-             tabPanel("Followers", 
+             tabPanel("Chart", 
                       radioButtons("radioButtons", 
                                    label = h3("Select One"), 
                                    choices = list("Pop" = "pop_artist",
