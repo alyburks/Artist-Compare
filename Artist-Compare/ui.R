@@ -6,7 +6,8 @@ source("equation.R")
 
 shinyUI(fluidPage(theme = "bootstrap.css",
   
-  titlePanel(imageOutput('logo', height = "auto")), 
+  titlePanel(imageOutput('logo', height = "auto"),
+             windowTitle = "Spartify"), 
   hr(),
   
   sidebarLayout( 
@@ -25,11 +26,12 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       ),
       mainPanel(
         #Creates tabs
+        h2(textOutput('both_names')),
         tabsetPanel(
             #Winner tab
              tabPanel("Winner", 
-                      h4(textOutput('both_names')),
-                      hr(),
+                      #h4(textOutput('both_names')),
+                      #hr(),
                       h1(textOutput('sentence')),
                       imageOutput('image', height = "auto"), 
                       hr(),
@@ -50,7 +52,8 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                       plotlyOutput('visualization')),
              #Tab about the application
              tabPanel("About", includeMarkdown("about.md")),
-        selected = "About")
+          selected = "About",
+          id = "tab_panel")
       )
    )
 ))

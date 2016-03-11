@@ -4,7 +4,7 @@ library(plotly)
 source("data_from_artist.R")
 source("equation.R")
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
       #Gets data from data_from_artist for each artist then finds the better artist and returns a list
       lists <- eventReactive(input$goButton ,{
@@ -13,6 +13,10 @@ shinyServer(function(input, output) {
         ret$artist2 <- each_artist(input$second_artist)
         ret$best <- better_artist_algorithm(ret$artist1, ret$artist2)
         return(ret)
+      })
+      
+      observeEvent(input$goButton, {
+        updateTabsetPanel(session, inputId = "tab_panel", selected = "Winner")
       })
       
       output$logo <- renderImage({
@@ -78,7 +82,7 @@ shinyServer(function(input, output) {
           opacity = 0.75) %>% 
         layout(xaxis = list(title = ""),
                yaxis = list(title = ""),
-               paper_bgcolor = toRGB("gray50"),
-               plot_bgcolor = toRGB("gray50"))
+               paper_bgcolor = toRGB("gray60"),
+               plot_bgcolor = toRGB("gray60"))
       })
 })
