@@ -6,7 +6,7 @@ source("equation.R")
 
 shinyUI(fluidPage(theme = "bootstrap.css",
   
-  titlePanel(imageOutput('logo')), 
+  titlePanel(imageOutput('logo', height = "auto")), 
   
   sidebarLayout( 
       sidebarPanel( 
@@ -19,13 +19,17 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                        label = h3("Second Artist:"),
                        placeholder =  "Enter Artist..."),
             #Does not run two artist until pressed
-            actionButton("goButton", "FIGHT!")
+            actionButton("goButton", "Fight!")
       ),
       mainPanel(
         #Creates tabs
         tabsetPanel(
             #Winner tab
-             tabPanel("Champion", h1(textOutput('sentence')),imageOutput('image'), textOutput('previewSentence'), tags$audio(src = (textOutput('url')), type = "audio/mp3", autoplay = NA, controls = NA)), 
+             tabPanel("Champion", 
+                      h1(textOutput('sentence')),
+                      imageOutput('image', height = "auto"), 
+                      textOutput('previewSentence'), 
+                      tags$audio(src = (textOutput('url')), type = "audio/mp3", autoplay = NA, controls = 1)), 
              #Table of data tab
              tabPanel("Data", tableOutput('table')), 
              #Tab of interactive display

@@ -18,7 +18,7 @@ shinyServer(function(input, output) {
       output$logo <- renderImage({
         list(src = 'imgs/spartify-logo2.png', 
              alt = "Spartify Logo",
-             width = "50%")
+             width = "30%")
       }, deleteFile = FALSE)
       
       #Text for who is the better artist  
