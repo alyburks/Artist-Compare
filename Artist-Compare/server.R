@@ -21,14 +21,14 @@ shinyServer(function(input, output) {
         paste0("The better artist is ", temp$best$name_artist, "!")
       })
       
-      output$url <- reactiveText({
+      output$url <- renderText({
         temp <- lists()
-        HTML(paste0('<audio src=', temp$best$track_id, ' </audio>'))
+        paste0(temp$best$track_id)
       })
       
       #Text for about
       output$about <- renderText({
-        paste0("This application leverages the Spotify API to compare two artists. Winner is determeined by an equation")
+        paste0("This application leverages the Spotify API to compare two artists. The winner is determined by an equation")
       })
       
       output$previewSentence <- renderText({

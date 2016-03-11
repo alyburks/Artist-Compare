@@ -24,10 +24,10 @@ shinyUI(fluidPage(theme = "bootstrap.css",
       
       
       mainPanel(
-          #Creates tabs
+          #Creates tabs(textOutput('url'))
            tabsetPanel(
                 #Winner tab
-                 tabPanel("Champion", h1(textOutput('sentence')),imageOutput('image'), textOutput('previewSentence'), tags$audio(src = (textOutput('url')), type = "audio/mp3", autoplay = NA, controls = NA)), 
+                 tabPanel("Champion", h1(textOutput('sentence')),imageOutput('image'), textOutput('previewSentence'), tags$audio(src = textOutput('url'), type = "audio/mp3", autoplay = NA, controls = 1)), 
                  #Table of data tab
                  tabPanel("Data", tableOutput('table')), 
                  #Tab of interactive display
